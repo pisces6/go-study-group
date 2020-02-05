@@ -38,7 +38,10 @@ type Number struct {
 func Numbers() []Number {
 	// TODO Q2
 	n := make([]Number, 0, 3)
-	n = append(ret, Number{index: 1}, Number{index: 2}, Number{index: 3})
+
+	for i := 1; i <= 3; i++ {
+		n = append(n, Number{index: i})
+	}
 	return n
 }
 
