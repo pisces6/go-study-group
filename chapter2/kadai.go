@@ -78,7 +78,16 @@ func Add(models []Model) {
 // ex) 引数:[]slice{21,21,4,5} 戻り値:[]int{21,4,5}
 func Unique(slice []int) []int {
 	// TODO Q5
-	return nil
+	unique := make(map[int]struct{})
+	s := make([]int, 0)
+
+	for _, e := range slice {
+		if _, ok := unique[e]; ok == false {
+			unique[e] = struct{}{}
+			s = append(s, e)
+		}
+	}
+	return s
 }
 
 // 連続するフィボナッチ数(0, 1, 1, 2, 3, 5, ...)を返す関数(クロージャ)を返却
